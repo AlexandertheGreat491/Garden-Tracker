@@ -355,3 +355,15 @@ button.danger {
   flex-wrap: wrap;
   margin-top: 12px;
 }
+
+/* Harvest estimate labels */
+
+.harvest-pill {
+  display: inline-block;
+  background: #eef4df;
+  padding: 6px 9px;
+  border-radius: 8px;
+  margin: 5px;
+  font-size: 0.8rem;
+}
+
