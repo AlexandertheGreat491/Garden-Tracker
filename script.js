@@ -603,4 +603,8 @@ Edit
          Your journal is empty.
        </p>`;
 
-       
+ // Render raised beds
+
+  renderBeds();
+}
+      
