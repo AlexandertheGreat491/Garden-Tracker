@@ -37,3 +37,10 @@ header p {
     color: #d3e7d7;
 }
 
+/* Main page */
+
+main {
+  max-width: 1120px;
+  margin: auto;
+  padding: 24px 20px 70px;
+}
