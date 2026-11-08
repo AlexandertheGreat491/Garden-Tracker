@@ -44,3 +44,16 @@ main {
   margin: auto;
   padding: 24px 20px 70px;
 }
+
+/* Hero section */
+
+.hero {
+  background: linear-gradient(
+    120deg,
+    #d8ebd9,
+    #f4f0dc
+  );
+
+  padding: 28px;
+  border-radius: 20px;
+}
