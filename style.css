@@ -28,3 +28,9 @@ header {
     color: white;
     padding: 22px;
 }
+header h1 {
+    margin: 0;
+}
+header p {
+    color: #d3e7d7;
+}
