@@ -250,3 +250,44 @@ button.danger {
   background: #fbe8e6;
   color: #9a3028;
 }
+
+/* Page sections */
+
+.section {
+  display: none;
+}
+
+.section.active {
+  display: block;
+}
+
+.sectionhead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+/* Cards */
+
+.cards,
+.beds {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+}
+
+/* Raised bed grid */
+
+.bed-grid {
+  display: grid;
+  gap: 6px;
+  background: #d5b89a;
+  border: 9px solid #ad8054;
+  border-radius: 12px;
+  padding: 9px;
+  margin: 16px 0;
+}
+
