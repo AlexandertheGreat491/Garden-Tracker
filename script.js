@@ -498,4 +498,27 @@ function render() {
   $("plantCards").innerHTML = state.plants.length
     ? state.plants.map(p => `
         <article class="plant-card">    
-        
+      <h3>🌱 ${escapeHTML(p.name)}</h3>
+
+          <p>
+            ${escapeHTML(p.type)} ·
+            ${escapeHTML(p.stage)}
+          </p>
+
+          <p>📍 ${escapeHTML(p.bed)}</p>
+
+          <p>📅 Planted ${fmt(p.planted)}</p>
+
+          <p>
+            💧 Water every
+            ${Number(p.interval)} days
+          </p>
+
+          <p>
+            ${due(p)
+              ? "Watering due"
+              : "Watered " + fmt(p.lastWatered)}
+          </p>
+
+          <div class="actions">
+  
