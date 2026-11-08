@@ -22,3 +22,7 @@ body {
     font-family: system-ui, sans-serif;
     color: var(--ink);
 }
+/* Header */
+header {
+    background: var(--green);
+}
