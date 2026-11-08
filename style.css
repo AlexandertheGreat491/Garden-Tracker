@@ -1,0 +1,13 @@
+/* ===================================
+   GARDEN GROVE - STYLESHEET
+=================================== */
+
+/* Global colors */
+:root {
+  --green: #245b43;
+  --mint: #e7f2e9;
+  --cream: #f7f8f2;
+  --ink: #23352b;
+  --muted: #68796e;
+  --line: #dce6dd;
+}
