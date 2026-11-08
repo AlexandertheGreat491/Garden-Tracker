@@ -573,4 +573,34 @@ Edit
          No harvests recorded yet.
        </p>`;
 
+ // Journal entries
+
+  $("noteList").innerHTML = state.notes.length
+    ? [...state.notes]
+        .sort((a, b) => b.date.localeCompare(a.date))
+        .map(n => `
+          <div class="entry">
+
+            <strong>
+              ${escapeHTML(n.title)}
+            </strong>
+
+            <p>${fmt(n.date)}</p>
+
+            <p style="white-space:pre-wrap">
+              ${escapeHTML(n.body)}
+            </p>
+
+            <button
+              class="danger"
+              onclick="removeEntry('notes','${n.id}')">
+              Delete
+            </button>
+
+          </div>
+        `).join("")
+    : `<p class="hint">
+         Your journal is empty.
+       </p>`;
+
        
