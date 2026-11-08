@@ -19,5 +19,5 @@
 body {
     margin: 0;
     background:var(--cream);
-    
+    font-family: system-ui, sans-serif;
 }
