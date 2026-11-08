@@ -188,3 +188,95 @@ function water(id) {
   }
 }
 
+// ------------------------------------------
+// 6. DASHBOARD AND PLANT RENDERING
+// ------------------------------------------
+
+function render() {
+
+  // Update dashboard numbers
+
+  $("plantCount").textContent =
+    state.plants.length;
+
+  $("waterCount").textContent =
+    state.plants.filter(due).length;
+
+  $("harvestCount").textContent =
+    state.harvests.length;
+
+  $("noteCount").textContent =
+    state.notes.length;
+
+  // Watering reminders
+
+  const pending = state.plants.filter(due);
+
+  $("dueList").innerHTML = pending.length
+    ? pending.map(p => `
+        <div class="entry">
+          <strong>${escapeHTML(p.name)}</strong>
+
+          <p>${escapeHTML(p.bed)}</p>
+
+          <button onclick="water('${p.id}')">
+            Mark watered
+          </button>
+        </div>
+      `).join("")
+    : `<p class="hint">
+         No watering reminders right now.
+       </p>`;
+
+  // Plant cards
+
+  $("plantCards").innerHTML = state.plants.length
+    ? state.plants.map(p => `
+        <article class="plant-card">
+
+          <h3>🌱 ${escapeHTML(p.name)}</h3>
+
+          <p>
+            ${escapeHTML(p.type)} ·
+            ${escapeHTML(p.stage)}
+          </p>
+
+          <p>📍 ${escapeHTML(p.bed)}</p>
+
+          <p>📅 Planted ${fmt(p.planted)}</p>
+
+          <p>
+            💧 Water every
+            ${Number(p.interval)} days
+          </p>
+
+          <p>
+            ${due(p)
+              ? "Watering due"
+              : "Watered " + fmt(p.lastWatered)}
+          </p>
+
+          <div class="actions">
+
+            <button onclick="water('${p.id}')">
+              Watered today
+            </button>
+
+            <button
+              class="secondary"
+              onclick="openForm('plant','${p.id}')">
+              Edit
+            </button>
+
+            <button
+              class="danger"
+              onclick="removeEntry('plants','${p.id}')">
+              Delete
+            </button>
+
+          </div>
+        </article>
+      `).join("")
+    : `<p class="hint">
+         No plants yet. Add your first plant.
+       </p>`;
