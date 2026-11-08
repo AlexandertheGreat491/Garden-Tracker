@@ -291,3 +291,67 @@ button.danger {
   margin: 16px 0;
 }
 
+/* Individual planting square */
+
+.plot {
+  min-width: 0;
+  aspect-ratio: 1;
+  background: #f4e6ce;
+  color: #574a36;
+  border: 1px dashed #bd9d78;
+  border-radius: 8px;
+  padding: 4px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+
+.plot b {
+  font-size: 1.5rem;
+}
+
+.plot small {
+  font-size: 0.7rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.plot.filled {
+  background: #d7e9ca;
+  color: #254a35;
+  border: 1px solid #92b586;
+}
+
+.plot:hover,
+.plot:focus-visible {
+  outline: 3px solid #2f7954;
+}
+
+/* Helper text */
+
+.hint {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.tip-panel {
+  margin-bottom: 18px;
+}
+
+/* Entries */
+
+.entry {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
