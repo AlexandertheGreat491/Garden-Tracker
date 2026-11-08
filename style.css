@@ -25,4 +25,6 @@ body {
 /* Header */
 header {
     background: var(--green);
+    color: white;
+    padding: 22px;
 }
