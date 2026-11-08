@@ -768,4 +768,51 @@ function openForm(kind, id) {
   $("editor").showModal();
 }
 
+// Save plant, harvest, or journal entry
+
+$("entryForm").addEventListener("submit", event => {
+  event.preventDefault();
+
+  const data = Object.fromEntries(
+    new FormData(event.currentTarget)
+  );
+
+  if (mode === "plant") {
+
+    const item = {
+      ...data,
+      id: editing || crypto.randomUUID(),
+      interval: Math.max(
+        1,
+        Number(data.interval) || 3
+      )
+    };
+
+    if (editing) {
+      state.plants = state.plants.map(
+        p => p.id === editing ? item : p
+      );
+    } else {
+      state.plants.push(item);
+    }
+
+  } else if (mode === "harvest") {
+
+    state.harvests.push({
+      ...data,
+      id: crypto.randomUUID()
+    });
+
+  } else {
+
+    state.notes.push({
+      ...data,
+      id: crypto.randomUUID()
+    });
+  }
+
+  $("editor").close();
+  save();
+});
+
 
