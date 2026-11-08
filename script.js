@@ -280,3 +280,222 @@ function render() {
     : `<p class="hint">
          No plants yet. Add your first plant.
        </p>`;
+
+       // Plant cards
+
+  $("plantCards").innerHTML = state.plants.length
+    ? state.plants.map(p => `
+        <article class="plant-card">
+
+          <h3>🌱 ${escapeHTML(p.name)}</h3>
+
+          <p>
+            ${escapeHTML(p.type)} ·
+            ${escapeHTML(p.stage)}
+          </p>
+
+          <p>📍 ${escapeHTML(p.bed)}</p>
+
+          <p>📅 Planted ${fmt(p.planted)}</p>
+
+          <p>
+            💧 Water every
+            ${Number(p.interval)} days
+          </p>
+
+          <p>
+            ${due(p)
+              ? "Watering due"
+              : "Watered " + fmt(p.lastWatered)}
+          </p>
+
+          <div class="actions">
+
+            <button onclick="water('${p.id}')">
+              Watered today
+            </button>
+
+            <button
+              class="secondary"
+              onclick="openForm('plant','${p.id}')">
+              Edit
+            </button>
+
+            <button
+              class="danger"
+              onclick="removeEntry('plants','${p.id}')">
+              Delete
+            </button>
+
+          </div>
+        </article>
+      `).join("")
+    : `<p class="hint">
+         No plants yet. Add your first plant.
+       </p>`;
+
+// Plant cards
+
+  $("plantCards").innerHTML = state.plants.length
+    ? state.plants.map(p => `
+        <article class="plant-card">
+
+          <h3>🌱 ${escapeHTML(p.name)}</h3>
+
+          <p>
+            ${escapeHTML(p.type)} ·
+            ${escapeHTML(p.stage)}
+          </p>
+
+          <p>📍 ${escapeHTML(p.bed)}</p>
+
+          <p>📅 Planted ${fmt(p.planted)}</p>
+
+          <p>
+            💧 Water every
+            ${Number(p.interval)} days
+          </p>
+
+          <p>
+            ${due(p)
+              ? "Watering due"
+              : "Watered " + fmt(p.lastWatered)}
+          </p>
+
+          <div class="actions">
+
+            <button onclick="water('${p.id}')">
+              Watered today
+            </button>
+
+            <button
+              class="secondary"
+              onclick="openForm('plant','${p.id}')">
+              Edit
+            </button>
+
+            <button
+              class="danger"
+              onclick="removeEntry('plants','${p.id}')">
+              Delete
+            </button>
+
+          </div>
+        </article>
+      `).join("")
+    : `<p class="hint">
+         No plants yet. Add your first plant.
+       </p>`;
+
+// Plant cards
+
+  $("plantCards").innerHTML = state.plants.length
+    ? state.plants.map(p => `
+        <article class="plant-card">
+
+          <h3>🌱 ${escapeHTML(p.name)}</h3>
+
+          <p>
+            ${escapeHTML(p.type)} ·
+            ${escapeHTML(p.stage)}
+          </p>
+
+          <p>📍 ${escapeHTML(p.bed)}</p>
+
+          <p>📅 Planted ${fmt(p.planted)}</p>
+
+          <p>
+            💧 Water every
+            ${Number(p.interval)} days
+          </p>
+
+          <p>
+            ${due(p)
+              ? "Watering due"
+              : "Watered " + fmt(p.lastWatered)}
+          </p>
+
+          <div class="actions">
+
+            <button onclick="water('${p.id}')">
+              Watered today
+            </button>
+
+            <button
+              class="secondary"
+              onclick="openForm('plant','${p.id}')">
+              Edit
+            </button>
+
+            <button
+              class="danger"
+              onclick="removeEntry('plants','${p.id}')">
+              Delete
+            </button>
+
+          </div>
+        </article>
+      `).join("")
+    : `<p class="hint">
+         No plants yet. Add your first plant.
+       </p>`;
+
+// Plant cards
+
+  $("plantCards").innerHTML = state.plants.length
+    ? state.plants.map(p => `
+        <article class="plant-card">
+
+          <h3>🌱 ${escapeHTML(p.name)}</h3>
+
+          <p>
+            ${escapeHTML(p.type)} ·
+            ${escapeHTML(p.stage)}
+          </p>
+
+          <p>📍 ${escapeHTML(p.bed)}</p>
+
+          <p>📅 Planted ${fmt(p.planted)}</p>
+
+          <p>
+            💧 Water every
+            ${Number(p.interval)} days
+          </p>
+
+          <p>
+            ${due(p)
+              ? "Watering due"
+              : "Watered " + fmt(p.lastWatered)}
+          </p>
+
+          <div class="actions">
+
+            <button onclick="water('${p.id}')">
+              Watered today
+            </button>
+
+            <button
+              class="secondary"
+              onclick="openForm('plant','${p.id}')">
+              Edit
+            </button>
+
+            <button
+              class="danger"
+              onclick="removeEntry('plants','${p.id}')">
+              Delete
+            </button>
+
+          </div>
+        </article>
+      `).join("")
+    : `<p class="hint">
+         No plants yet. Add your first plant.
+       </p>`;
+
+  // Plant cards
+
+  $("plantCards").innerHTML = state.plants.length
+    ? state.plants.map(p => `
+        <article class="plant-card">    
+        
