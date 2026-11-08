@@ -101,3 +101,68 @@ function save() {
 }
 
 // ------------------------------------------
+
+// 4. CROP CATALOG
+// ------------------------------------------
+
+const CROPS = {
+  Tomato: {
+    emoji: "🍅",
+    days: 80
+  },
+
+  Pepper: {
+    emoji: "🫑",
+    days: 85
+  },
+
+  Carrot: {
+    emoji: "🥕",
+    days: 70
+  },
+
+  Lettuce: {
+    emoji: "🥬",
+    days: 45
+  },
+
+  Cucumber: {
+    emoji: "🥒",
+    days: 60
+  },
+
+  "Green beans": {
+    emoji: "🫘",
+    days: 55
+  },
+
+  Radish: {
+    emoji: "🌱",
+    days: 30
+  },
+
+  Kale: {
+    emoji: "🥬",
+    days: 55
+  },
+
+  Zucchini: {
+    emoji: "🥒",
+    days: 55
+  },
+
+  Basil: {
+    emoji: "🌿",
+    days: 60
+  },
+
+  Strawberry: {
+    emoji: "🍓",
+    days: 90
+  },
+
+  Other: {
+    emoji: "🌱",
+    days: 70
+  }
+};
