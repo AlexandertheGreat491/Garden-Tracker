@@ -11,3 +11,8 @@
   --muted: #68796e;
   --line: #dce6dd;
 }
+/* General styling */
+
+* {
+  box-sizing: border-box;
+}
