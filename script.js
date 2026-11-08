@@ -166,3 +166,25 @@ const CROPS = {
     days: 70
   }
 };
+
+// ------------------------------------------
+// 5. WATERING TRACKER
+// ------------------------------------------
+
+function due(plant) {
+  return !plant.lastWatered ||
+    daysSince(plant.lastWatered) >=
+      Number(plant.interval || 3);
+}
+
+function water(id) {
+  const plant = state.plants.find(
+    p => p.id === id
+  );
+
+  if (plant) {
+    plant.lastWatered = today();
+    save();
+  }
+}
+
