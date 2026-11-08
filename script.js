@@ -544,3 +544,33 @@ Edit
          No plants yet. Add your first plant.
        </p>`;
 
+ // Harvest records
+ 
+ $("harvestList").innerHTML = state.harvests.length
+    ? [...state.harvests]
+        .sort((a, b) => b.date.localeCompare(a.date))
+        .map(h => `
+          <div class="entry">
+
+            <strong>
+              🥬 ${escapeHTML(h.crop)}
+            </strong>
+
+            <p>
+              ${escapeHTML(h.amount)} ·
+              ${fmt(h.date)}
+            </p>
+
+            <button
+              class="danger"
+              onclick="removeEntry('harvests','${h.id}')">
+              Delete
+            </button>
+
+          </div>
+        `).join("")
+    : `<p class="hint">
+         No harvests recorded yet.
+       </p>`;
+
+       
