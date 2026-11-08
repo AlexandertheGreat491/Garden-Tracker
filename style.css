@@ -57,3 +57,153 @@ main {
   padding: 28px;
   border-radius: 20px;
 }
+
+/* Dashboard statistics */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin: 20px 0;
+}
+
+.stat,
+.panel,
+.bed-card,
+.plant-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.stat span {
+  display: block;
+  color: var(--muted);
+}
+
+.stat strong {
+  display: block;
+  font-size: 2rem;
+  margin-top: 8px;
+}
+
+/* Dashboard statistics */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin: 20px 0;
+}
+
+.stat,
+.panel,
+.bed-card,
+.plant-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.stat span {
+  display: block;
+  color: var(--muted);
+}
+
+.stat strong {
+  display: block;
+  font-size: 2rem;
+  margin-top: 8px;
+}
+
+/* Dashboard statistics */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin: 20px 0;
+}
+
+.stat,
+.panel,
+.bed-card,
+.plant-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.stat span {
+  display: block;
+  color: var(--muted);
+}
+
+.stat strong {
+  display: block;
+  font-size: 2rem;
+  margin-top: 8px;
+}
+
+/* Dashboard statistics */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin: 20px 0;
+}
+
+.stat,
+.panel,
+.bed-card,
+.plant-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.stat span {
+  display: block;
+  color: var(--muted);
+}
+
+.stat strong {
+  display: block;
+  font-size: 2rem;
+  margin-top: 8px;
+}
+
+/* Dashboard statistics */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin: 20px 0;
+}
+
+.stat,
+.panel,
+.bed-card,
+.plant-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.stat span {
+  display: block;
+  color: var(--muted);
+}
+
+.stat strong {
+  display: block;
+  font-size: 2rem;
+  margin-top: 8px;
+}
