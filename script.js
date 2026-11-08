@@ -91,3 +91,13 @@ function daysSince(date) {
   );
 }
 
+// ------------------------------------------
+// 3. SAVE GARDEN DATA
+// ------------------------------------------
+
+function save() {
+  localStorage.setItem(KEY, JSON.stringify(state));
+  render();
+}
+
+// ------------------------------------------
