@@ -607,4 +607,165 @@ Edit
 
   renderBeds();
 }
-      
+
+// ------------------------------------------
+// 7. DELETE ENTRIES
+// ------------------------------------------
+
+function removeEntry(collection, id) {
+  if (confirm("Delete this entry?")) {
+    state[collection] = state[collection].filter(
+      item => item.id !== id
+    );
+
+    save();
+  }
+}
+
+// ------------------------------------------
+// 8. PLANT, HARVEST, AND JOURNAL FORMS
+// ------------------------------------------
+
+let mode;
+let editing;
+
+function field(
+  label,
+  name,
+  type = "text",
+  value = "",
+  extra = ""
+) {
+  return `
+    <label>
+      ${label}
+
+      <input
+        name="${name}"
+        type="${type}"
+        value="${escapeHTML(value)}"
+        ${extra}
+        required>
+    </label>
+  `;
+}
+
+function choose(label, name, options, selected) {
+  return `
+    <label>
+      ${label}
+
+      <select name="${name}">
+        ${options.map(option => `
+          <option
+            value="${escapeHTML(option)}"
+            ${option === selected ? "selected" : ""}>
+            ${escapeHTML(option)}
+          </option>
+        `).join("")}
+      </select>
+    </label>
+  `;
+}
+
+function openForm(kind, id) {
+  mode = kind;
+  editing = id || null;
+
+  const p = state.plants.find(
+    item => item.id === id
+  ) || {};
+
+  $("formTitle").textContent =
+    kind === "plant"
+      ? (id ? "Edit plant" : "Add plant")
+      : kind === "harvest"
+        ? "Log a harvest"
+        : "New journal entry";
+
+  if (kind === "plant") {
+
+    $("fields").innerHTML =
+      field(
+        "Plant name",
+        "name",
+        "text",
+        p.name || "",
+        'maxlength="80"'
+      ) +
+
+      choose(
+        "Category",
+        "type",
+        ["Vegetable", "Herb", "Flower", "Fruit", "Other"],
+        p.type
+      ) +
+
+      field(
+        "Garden bed / location",
+        "bed",
+        "text",
+        p.bed || ""
+      ) +
+
+      field(
+        "Planting date",
+        "planted",
+        "date",
+        p.planted || today()
+      ) +
+
+      choose(
+        "Growth stage",
+        "stage",
+        [
+          "Seed",
+          "Seedling",
+          "Growing",
+          "Flowering",
+          "Ready to harvest",
+          "Finished"
+        ],
+        p.stage
+      ) +
+
+      field(
+        "Water every (days)",
+        "interval",
+        "number",
+        p.interval || 3,
+        'min="1" max="365"'
+      ) +
+
+      `<label>
+        Last watered
+
+        <input
+          name="lastWatered"
+          type="date"
+          value="${escapeHTML(p.lastWatered || "")}">
+      </label>`;
+
+  } else if (kind === "harvest") {
+
+    $("fields").innerHTML =
+      field("Crop", "crop") +
+      field("Amount (e.g. 2 lbs)", "amount") +
+      field("Harvest date", "date", "date", today());
+
+  } else {
+
+    $("fields").innerHTML =
+      field("Title", "title") +
+      field("Date", "date", "date", today()) +
+
+      `<label>
+        Notes
+        <textarea name="body" required></textarea>
+      </label>`;
+  }
+
+  $("editor").showModal();
+}
+
+
