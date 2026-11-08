@@ -862,4 +862,79 @@ function renderBeds() {
         }
       ).join("");
 
+// Calculate upcoming harvests
+
+      const upcoming = Object.values(bed.plots)
+        .filter(Boolean)
+        .map(p => ({
+          ...p,
+          harvest: addDays(
+            p.date,
+            (CROPS[p.crop] || CROPS.Other).days
+          )
+        }))
+        .sort((a, b) =>
+          a.harvest.localeCompare(b.harvest)
+        )
+        .slice(0, 3);
+
+      return `
+        <article class="bed-card">
+
+          <div class="sectionhead">
+
+            <div>
+              <h3>
+                🪴 ${escapeHTML(bed.name)}
+              </h3>
+
+              <p class="hint">
+                ${bed.length} × ${bed.width} ft ·
+                ${planted}/${total} zones planted
+              </p>
+            </div>
+
+            <button
+              class="danger"
+              onclick="removeBed('${bed.id}')">
+              Delete
+            </button>
+
+          </div>
+
+          <div
+            class="bed-grid"
+            style="grid-template-columns:
+              repeat(${bed.cols}, minmax(0, 1fr))">
+
+            ${squares}
+
+          </div>
+
+          <strong>
+            Estimated upcoming harvests
+          </strong>
+
+          <div>
+            ${upcoming.length
+              ? upcoming.map(p => `
+                <span class="harvest-pill">
+                  ${escapeHTML(p.crop)} ·
+                  ${fmt(p.harvest)}
+                </span>
+              `).join("")
+              : `<p class="hint">
+                   Plant a zone to see harvest estimates.
+                 </p>`}
+          </div>
+
+        </article>
+      `;
+    }).join("")
+    : `<div class="panel">
+         No raised beds yet.
+         Add one to begin planning.
+       </div>`;
+}
+
 
