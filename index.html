@@ -256,6 +256,91 @@ Select a planting square to assign a vegetable.
         value="2"
         required>
     </label>
+<div class="formactions">
+      <button
+        type="button"
+        class="secondary"
+        onclick="bedEditor.close()">
+        Cancel
+      </button>
+
+      <button type="submit">
+        Create bed
+      </button>
+    </div>
+  </form>
+</dialog>
+<!-- Planting zone dialog -->
+
+<dialog id="plotEditor">
+  <h2 id="plotTitle">Plant a zone</h2>
+
+  <form id="plotForm">
+    <label>
+      Crop
+      <select
+        name="crop"
+        id="cropSelect"
+        required>
+      </select>
+    </label>
+
+    <label>
+      Planting date
+      <input
+        type="date"
+        name="date"
+        id="plotDate"
+        required>
+    </label>
+
+    <p class="hint" id="harvestEstimate"></p>
+
+    <div class="formactions">
+      <button
+        type="button"
+        class="danger"
+        onclick="clearSelectedPlot()">
+        Clear zone
+      </button>
+
+      <button
+        type="button"
+        class="secondary"
+        onclick="plotEditor.close()">
+        Cancel
+      </button>
+
+      <button type="submit">
+        Save planting
+      </button>
+    </div>
+  </form>
+</dialog>
+
+<!-- General plant, harvest, and journal dialog -->
+
+<dialog id="editor">
+  <h2 id="formTitle"></h2>
+
+  <form id="entryForm">
+    <div id="fields"></div>
+
+    <div class="formactions">
+      <button
+        type="button"
+        class="secondary"
+        onclick="editor.close()">
+        Cancel
+      </button>
+
+      <button type="submit">
+        Save
+      </button>
+    </div>
+  </form>
+</dialog>
+
 
 </body>
 </head>    
