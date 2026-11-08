@@ -521,4 +521,26 @@ function render() {
           </p>
 
           <div class="actions">
-  
+<button
+onclick="water('${p.id}')">
+Watered today
+</button>
+
+<button
+class="secondary"
+onclick="openForm('plant','${p.id}')">
+Edit
+</button>
+
+<button
+              class="danger"
+              onclick="removeEntry('plants','${p.id}')">
+              Delete
+            </button>
+ </div>
+        </article>
+      `).join("")
+    : `<p class="hint">
+         No plants yet. Add your first plant.
+       </p>`;
+
