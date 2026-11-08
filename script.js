@@ -815,4 +815,51 @@ $("entryForm").addEventListener("submit", event => {
   save();
 });
 
+// ------------------------------------------
+// 9. INTERACTIVE RAISED-BED PLANNER
+// ------------------------------------------
+
+function renderBeds() {
+
+  $("bedCards").innerHTML = state.beds.length
+    ? state.beds.map(bed => {
+
+      const total = bed.rows * bed.cols;
+
+      const planted = Object.values(bed.plots)
+        .filter(Boolean).length;
+
+      // Generate planting squares
+
+      const squares = Array.from(
+        { length: total },
+        (_, index) => {
+
+          const planting = bed.plots[index];
+
+          const crop = planting
+            ? (CROPS[planting.crop] || CROPS.Other)
+            : null;
+
+          return `
+            <button
+              type="button"
+              class="plot ${planting ? "filled" : ""}"
+              onclick="openPlot('${bed.id}', ${index})">
+
+              <b>
+                ${crop ? crop.emoji : "+"}
+              </b>
+
+              <small>
+                ${planting
+                  ? escapeHTML(planting.crop)
+                  : "Plant"}
+              </small>
+
+            </button>
+          `;
+        }
+      ).join("");
+
 
