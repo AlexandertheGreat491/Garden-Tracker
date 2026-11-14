@@ -7,3 +7,7 @@
   --text: #263238;
 }
 
+* {
+  box-sizing: border-box;
+}
+
