@@ -139,3 +139,28 @@ nav button.active {
   background: #fffde7;
 }
 
+.cards,
+.beds {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.card h3,
+.bed-card h3 {
+  margin-top: 0;
+}
+
+.secondary {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.secondary:hover {
+  background: #bdbdbd;
+}
+
+.danger {
+  background: #c62828;
+}
