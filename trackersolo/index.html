@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Garden Grove | Garden Tracker</title>
+<!--Connect CSS-->
+<link rel="stylesheet" href="styles.css">
+<!--Connect JavaScript-->
+<script src+"script.js" defer></script>
+<body>
+<header>
+  <h1>🌿 Garden Grove</h1>
+  <p>Your personal garden tracker</p>
+</header>
+<main>
+ <div class="hero">
+<h2>Grow something wonderful 🌱</h2>
+<p>
+Track your plants, raised beds, watering, and harvests.    
+</p>
+ </div>
+ <!--Dashboard statistics-->   
+ <div class="stats">
+<span>Plants tracked</span>
+<strong id="plantCount">0</strong>
+ </div>
+ <div class="stat">
+<span>Need watering</span>
+<strong id="waterCount">0</strong>
+ </div>
+ <div class="stat">
+      <span>Harvest records</span>
+      <strong id="harvestCount">0</strong>
+    </div>
+ <div class="stat">
+      <span>Journal entries</span>
+      <strong id="noteCount">0</strong>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+<nav>
+    <button class="active" data-tab="dashboard">
+      Dashboard
+    </button>
+
+    <button data-tab="plants">
+      My Plants
+    </button>
+
+    <button data-tab="planner">
+      🪴 Bed Planner
+    </button>
+
+    <button data-tab="harvests">
+      Harvests
+    </button>
+
+    <button data-tab="journal">
+      Journal
+    </button>
+  </nav>
+  <!-- Dashboard -->
+ <section id="dashboard" class="section active">
+ <div class="panel">
+<h2>💧 Watering reminders</h2>
+      <div id="dueList"></div>
+ </div> 
+ </section>
+ <!-- Plant tracker -->
+ <section id="plants" class="section">
+  <div clas="sectionhead">
+    <h2>My Plants</h2>
+    <button onclick="openForm('plant')">
+      + Add Plant
+    </button>
+  </div>
+  <div id="plantCards" class="cards"></div>
+ </section>
+   <!-- Raised-bed planner -->
+<section id="planner" class="section">
+<div class="sectionhead">
+<div>
+<h2>Interactive Garden Bed Planner</h2>  
+<p class="hint">
+Select a planting square to assign a vegetable.
+</p>
+</div>
+  <button onclick="openBedForm()">
+        + Add raised bed
+      </button>
+</div>
+<div class="panel tip-panel">
+      <strong>🌤️ Minnesota growing tip</strong>
+      <p class="hint">
+        Tomatoes and peppers are generally transplanted
+        outdoors after the danger of frost has passed.
+      </p>
+    </div>
+
+    <div id="bedCards" class="beds"></div>
+  </section>
+
+  <!-- Harvest tracker -->
+<section id="harvests" class="section">
+<div class="sectionhead">
+<h2>Harvest Log</h2>
+<button onclick="openForm('harvest')">
+      + Log harvest
+</button>
+</div>
+<div class="panel" id="harvestList"></div>
+</section>
+ <!-- Garden journal -->
+
+  <section id="journal" class="section">
+    <div class="sectionhead">
+      <h2>Garden Journal</h2>
+
+      <button onclick="openForm('note')">
+        + Add note
+      </button>
+    </div>
+
+    <div class="panel" id="noteList"></div>
+  </section>
+
+  <p class="hint">
+    Garden information is saved in this browser
+    using local storage.
+  </p>
+</section>
+</main>
+<!-- Add raised bed dialog -->
+<dialog id="bedEditor">
+  <h2>Add a raised bed</h2>
+
+  <form id="bedForm">
+    <label>
+      Bed name
+      <input
+        name="name"
+        placeholder="South raised bed"
+        required>
+    </label>
+<label>
+      Length (feet)
+      <input
+        type="number"
+        name="length"
+        min="1"
+        max="30"
+        value="8"
+        required>
+    </label>
+<label>
+      Width (feet)
+      <input
+        type="number"
+        name="width"
+        min="1"
+        max="12"
+        value="4"
+        required>
+    </label>
+
+    <label>
+      Grid columns
+      <input
+        type="number"
+        name="cols"
+        min="1"
+        max="8"
+        value="4"
+        required>
+    </label>
+
+    <label>
+      Grid rows
+      <input
+        type="number"
+        name="rows"
+        min="1"
+        max="8"
+        value="2"
+        required>
+    </label>
+  <div class="formactions">
+      <button
+        type="button"
+        class="secondary"
+        onclick="bedEditor.close()">
+        Cancel
+      </button>
+
+      <button type="submit">
+        Create bed
+      </button>
+    </div>
+  </form>
+</dialog>
+<!-- Add raised bed dialog -->
+
+<dialog id="bedEditor">
+  <h2>Add a raised bed</h2>
+
+  <form id="bedForm">
+    <label>
+      Bed name
+      <input
+        name="name"
+        placeholder="South raised bed"
+        required>
+    </label>
+  <label>
+      Length (feet)
+      <input
+        type="number"
+        name="length"
+        min="1"
+        max="30"
+        value="8"
+        required>
+    </label>
+
+    <label>
+      Width (feet)
+      <input
+        type="number"
+        name="width"
+        min="1"
+        max="12"
+        value="4"
+        required>
+    </label>
+
+    <label>
+      Grid columns
+      <input
+        type="number"
+        name="cols"
+        min="1"
+        max="8"
+        value="4"
+        required>
+    </label>
+
+    <label>
+      Grid rows
+      <input
+        type="number"
+        name="rows"
+        min="1"
+        max="8"
+        value="2"
+        required>
+    </label>
+<div class="formactions">
+      <button
+        type="button"
+        class="secondary"
+        onclick="bedEditor.close()">
+        Cancel
+      </button>
+
+      <button type="submit">
+        Create bed
+      </button>
+    </div>
+  </form>
+</dialog>
+<!-- Planting zone dialog -->
+
+<dialog id="plotEditor">
+  <h2 id="plotTitle">Plant a zone</h2>
+
+  <form id="plotForm">
+    <label>
+      Crop
+      <select
+        name="crop"
+        id="cropSelect"
+        required>
+      </select>
+    </label>
+
+    <label>
+      Planting date
+      <input
+        type="date"
+        name="date"
+        id="plotDate"
+        required>
+    </label>
+
+    <p class="hint" id="harvestEstimate"></p>
+
+    <div class="formactions">
+      <button
+        type="button"
+        class="danger"
+        onclick="clearSelectedPlot()">
+        Clear zone
+      </button>
+
+      <button
+        type="button"
+        class="secondary"
+        onclick="plotEditor.close()">
+        Cancel
+      </button>
+
+      <button type="submit">
+        Save planting
+      </button>
+    </div>
+  </form>
+</dialog>
+
+<!-- General plant, harvest, and journal dialog -->
+
+<dialog id="editor">
+  <h2 id="formTitle"></h2>
+
+  <form id="entryForm">
+    <div id="fields"></div>
+
+    <div class="formactions">
+      <button
+        type="button"
+        class="secondary"
+        onclick="editor.close()">
+        Cancel
+      </button>
+
+      <button type="submit">
+        Save
+      </button>
+    </div>
+  </form>
+</dialog>
+
+
+</body>
+</head>    
+</html>

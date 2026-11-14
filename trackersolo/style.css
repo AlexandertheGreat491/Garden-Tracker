@@ -1,0 +1,431 @@
+/* ===================================
+   GARDEN GROVE - STYLESHEET
+=================================== */
+
+/* Global colors */
+:root {
+  --green: #245b43;
+  --mint: #e7f2e9;
+  --cream: #f7f8f2;
+  --ink: #23352b;
+  --muted: #68796e;
+  --line: #dce6dd;
+}
+/* General styling */
+
+* {
+  box-sizing: border-box;
+}
+body {
+    margin: 0;
+    background:var(--cream);
+    font-family: system-ui, sans-serif;
+    color: var(--ink);
+}
+/* Header */
+header {
+    background: var(--green);
+    color: white;
+    padding: 22px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p {
+    color: #d3e7d7;
+}
+
+/* Main page */
+
+main {
+  max-width: 1120px;
+  margin: auto;
+  padding: 24px 20px 70px;
+}
+
+/* Hero section */
+
+.hero {
+  background: linear-gradient(
+    120deg,
+    #d8ebd9,
+    #f4f0dc
+  );
+
+  padding: 28px;
+  border-radius: 20px;
+}
+
+/* Dashboard statistics */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin: 20px 0;
+}
+
+.stat,
+.panel,
+.bed-card,
+.plant-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.stat span {
+  display: block;
+  color: var(--muted);
+}
+
+.stat strong {
+  display: block;
+  font-size: 2rem;
+  margin-top: 8px;
+}
+
+/* Dashboard statistics */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin: 20px 0;
+}
+
+.stat,
+.panel,
+.bed-card,
+.plant-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.stat span {
+  display: block;
+  color: var(--muted);
+}
+
+.stat strong {
+  display: block;
+  font-size: 2rem;
+  margin-top: 8px;
+}
+
+/* Dashboard statistics */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin: 20px 0;
+}
+
+.stat,
+.panel,
+.bed-card,
+.plant-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.stat span {
+  display: block;
+  color: var(--muted);
+}
+
+.stat strong {
+  display: block;
+  font-size: 2rem;
+  margin-top: 8px;
+}
+
+/* Dashboard statistics */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin: 20px 0;
+}
+
+.stat,
+.panel,
+.bed-card,
+.plant-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.stat span {
+  display: block;
+  color: var(--muted);
+}
+
+.stat strong {
+  display: block;
+  font-size: 2rem;
+  margin-top: 8px;
+}
+
+/* Dashboard statistics */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin: 20px 0;
+}
+
+.stat,
+.panel,
+.bed-card,
+.plant-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.stat span {
+  display: block;
+  color: var(--muted);
+}
+
+.stat strong {
+  display: block;
+  font-size: 2rem;
+  margin-top: 8px;
+}
+
+/* Navigation */
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 24px 0;
+}
+
+nav button {
+  background: white;
+  color: var(--green);
+  border: 1px solid var(--line);
+}
+
+nav button.active {
+  background: var(--green);
+  color: white;
+}
+
+/* Buttons */
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: 0;
+  border-radius: 10px;
+  padding: 11px 15px;
+  font-weight: 600;
+  background: var(--green);
+  color: white;
+}
+
+button.secondary {
+  background: var(--mint);
+  color: var(--green);
+}
+
+button.danger {
+  background: #fbe8e6;
+  color: #9a3028;
+}
+
+/* Page sections */
+
+.section {
+  display: none;
+}
+
+.section.active {
+  display: block;
+}
+
+.sectionhead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+/* Cards */
+
+.cards,
+.beds {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+}
+
+/* Raised bed grid */
+
+.bed-grid {
+  display: grid;
+  gap: 6px;
+  background: #d5b89a;
+  border: 9px solid #ad8054;
+  border-radius: 12px;
+  padding: 9px;
+  margin: 16px 0;
+}
+
+/* Individual planting square */
+
+.plot {
+  min-width: 0;
+  aspect-ratio: 1;
+  background: #f4e6ce;
+  color: #574a36;
+  border: 1px dashed #bd9d78;
+  border-radius: 8px;
+  padding: 4px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+
+.plot b {
+  font-size: 1.5rem;
+}
+
+.plot small {
+  font-size: 0.7rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.plot.filled {
+  background: #d7e9ca;
+  color: #254a35;
+  border: 1px solid #92b586;
+}
+
+.plot:hover,
+.plot:focus-visible {
+  outline: 3px solid #2f7954;
+}
+
+/* Helper text */
+
+.hint {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.tip-panel {
+  margin-bottom: 18px;
+}
+
+/* Entries */
+
+.entry {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+/* Harvest estimate labels */
+
+.harvest-pill {
+  display: inline-block;
+  background: #eef4df;
+  padding: 6px 9px;
+  border-radius: 8px;
+  margin: 5px;
+  font-size: 0.8rem;
+}
+
+/* Dialog windows */
+
+dialog {
+  border: 0;
+  border-radius: 18px;
+  padding: 25px;
+  width: min(95vw, 470px);
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 80px #0003;
+}
+
+dialog::backdrop {
+  background: #14291b88;
+}
+
+/* Forms */
+
+form {
+  display: grid;
+  gap: 13px;
+}
+
+label {
+  display: grid;
+  gap: 5px;
+  font-weight: 600;
+}
+
+input,
+select,
+textarea {
+  font: inherit;
+  width: 100%;
+  padding: 11px;
+  border: 1px solid #cad9cc;
+  border-radius: 9px;
+}
+
+textarea {
+  min-height: 90px;
+}
+
+.formactions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+/* Responsive layout */
+
+@media (max-width: 700px) {
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sectionhead {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
