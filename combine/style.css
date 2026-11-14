@@ -86,3 +86,17 @@ button {
   font: inherit;
 }
 
+button:hover {
+  background: #1b5e20;
+}
+
+nav button {
+  background: #c8e6c9;
+  color: #1b5e20;
+}
+
+nav button.active {
+  background: var(--green);
+  color: white;
+}
+
