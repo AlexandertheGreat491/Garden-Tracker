@@ -58,3 +58,31 @@ main {
   box-shadow: 0 3px 10px rgba(0,0,0,0.06);
 }
 
+.stat span {
+  display: block;
+  color: #607d65;
+  margin-bottom: 10px;
+}
+
+.stat strong {
+  font-size: 28px;
+  color: var(--green);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+button {
+  background: var(--green);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 11px 16px;
+  cursor: pointer;
+  font: inherit;
+}
+
