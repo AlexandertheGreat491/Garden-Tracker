@@ -79,6 +79,115 @@ Track your plants, plan raised beds, manage water, and record harvests.
 
       <div id="plantCards" class="cards"></div>
     </section>
+
+ <!-- Raised-bed planner -->
+<section id="planner" class="section">
+<div class="sectionhead">
+<div>
+          <h2>Interactive Garden Bed Planner</h2>
+          <p class="hint">
+            Drag vegetables from the Seed Box into
+            the garden grid, or click a square to plant.
+          </p>
+        </div>
+<button onclick="openBedForm()">
+          + Add raised bed
+        </button>
+      </div>
+<div class="panel tip-panel">
+        <strong>🌤️ Minnesota growing tip</strong>
+        <p class="hint">
+          Tomatoes and peppers are generally
+          transplanted outdoors after the danger
+          of frost has passed.
+        </p>
+      </div>
+<!-- Gourmet Garden Planner -->
+      <div class="planner-layout">
+        <aside id="sidebar">
+          <h2>🌱 Seed Box</h2>
+          <p class="hint">
+            Drag a vegetable onto a planting square.
+          </p>
+ <div class="plant-option"
+               draggable="true"
+               data-type="rhubarb"
+               data-icon="🌿">
+            <span>🌿</span>
+            <strong>Rhubarb</strong>
+          </div>
+ <div class="plant-option"
+               draggable="true"
+               data-type="asparagus"
+               data-icon="🎋">
+            <span>🎋</span>
+            <strong>Asparagus</strong>
+          </div>
+
+          <div class="plant-option"
+               draggable="true"
+               data-type="broccoli"
+               data-icon="🥦">
+            <span>🥦</span>
+            <strong>Broccoli</strong>
+          </div>
+ <div id="info-box">
+            <strong>Planting Tip:</strong>
+            <p id="tip-text">
+              Select a vegetable to see its
+              growing information.
+            </p>
+          </div>
+        </aside>
+
+        <div class="garden-area">
+          <h3>My Gourmet Garden</h3>
+          <p class="hint">
+            Click a planted square to remove its crop.
+          </p>
+<div class="grid-scroll">
+            <div id="garden-grid"></div>
+          </div>
+
+          <button id="clearGarden"
+                  class="secondary">
+            Clear Gourmet Garden
+          </button>
+        </div>
+      </div>
+
+      <!-- Original raised beds -->
+      <h2>My Raised Beds</h2>
+      <div id="bedCards" class="beds"></div>
+
+</section>
+<!-- Harvest tracker -->
+    <section id="harvests" class="section">
+      <div class="sectionhead">
+        <h2>Harvest Log</h2>
+        <button onclick="openForm('harvest')">
+          + Log harvest
+        </button>
+      </div>
+
+      <div class="panel" id="harvestList"></div>
+    </section>
+
+    <!-- Garden journal -->
+    <section id="journal" class="section">
+      <div class="sectionhead">
+        <h2>Garden Journal</h2>
+        <button onclick="openForm('note')">
+          + Add note
+        </button>
+      </div>
+ <div class="panel" id="noteList"></div>
+    </section>
+
+    <p class="hint storage-note">
+      Your garden information is saved in this
+      browser using local storage.
+    </p>
 </main>
 </body>
 
