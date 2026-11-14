@@ -60,6 +60,25 @@ Track your plants, plan raised beds, manage water, and record harvests.
 <button data-tab="journal">Journal</button>
 </nav>
 
+  <!-- Dashboard -->
+<section id="dashboard" class="section active">
+<div class="panel">
+<h2>💧 Watering reminders</h2>
+<div id="dueList"></div>
+</div>
+</section>
+
+    <!-- Plant tracker -->
+ <section id="plants" class="section">
+      <div class="sectionhead">
+        <h2>My Plants</h2>
+        <button onclick="openForm('plant')">
+          + Add plant
+        </button>
+      </div>
+
+      <div id="plantCards" class="cards"></div>
+    </section>
 </main>
 </body>
 
