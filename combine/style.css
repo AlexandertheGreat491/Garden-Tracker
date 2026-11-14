@@ -164,3 +164,211 @@ nav button.active {
 .danger {
   background: #c62828;
 }
+
+.danger:hover {
+  background: #8e0000;
+}
+
+/* Gourmet Garden Planner */
+
+.planner-layout {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+#sidebar {
+  width: 100%;
+}
+
+.plant-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 2px solid #eee;
+  border-radius: 8px;
+  cursor: grab;
+  transition: 0.2s;
+}
+
+.plant-option span {
+  font-size: 26px;
+}
+
+.plant-option:hover,
+.plant-option.selected {
+  border-color: #4caf50;
+  background: #f2f8e9;
+}
+
+#info-box {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.grid-scroll {
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+#garden-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 80px);
+  grid-template-rows: repeat(5, 80px);
+  gap: 4px;
+  background: var(--dark-soil);
+  padding: 10px;
+  border-radius: 8px;
+  width: max-content;
+  margin-bottom: 15px;
+}
+
+.cell {
+  width: 80px;
+  height: 80px;
+  background: var(--soil);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cell:hover {
+  outline: 3px solid #ffeb3b;
+  background: #795548;
+}
+
+.cell:empty::before {
+  content: '+';
+  color: rgba(255,255,255,0.25);
+  font-size: 20px;
+}
+
+.cell:focus-visible {
+  outline: 3px solid #ffeb3b;
+}
+
+/* Raised-bed grids */
+
+.bed-grid {
+  display: grid;
+  gap: 4px;
+  margin: 15px 0;
+}
+
+.bed-cell {
+  min-height: 65px;
+  background: #efebe9;
+  border: 1px solid #bcaaa4;
+  color: #3e2723;
+  padding: 5px;
+  overflow-wrap: anywhere;
+}
+
+.bed-cell:hover {
+  background: #d7ccc8;
+}
+
+.bed-cell.planted {
+  background: #c8e6c9;
+}
+
+.bed-cell span {
+  display: block;
+  font-size: 12px;
+}
+
+/* Forms */
+
+dialog {
+  border: none;
+  border-radius: 12px;
+  padding: 25px;
+  width: min(95vw, 450px);
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+dialog::backdrop {
+  background: rgba(0,0,0,0.5);
+}
+
+label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+input,
+select,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font: inherit;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.formactions {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.storage-note {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.entry {
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.entry:last-child {
+  border-bottom: none;
+}
+
+.entry button,
+.card button,
+.bed-card > button {
+  margin-top: 8px;
+}
+
+@media (max-width: 750px) {
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .planner-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  main {
+    padding: 12px;
+  }
+}
