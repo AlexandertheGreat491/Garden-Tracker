@@ -11,3 +11,17 @@
   box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: var(--light-green);
+  color: var(--text);
+}
+
+header {
+  background: var(--green);
+  color: white;
+  text-align: center;
+  padding: 28px 20px;
+}
+
