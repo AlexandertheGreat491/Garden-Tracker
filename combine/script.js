@@ -42,3 +42,11 @@ const cropInfo = {
   }
 };
 
+const defaultData = () => ({
+  plants: [],
+  beds: [],
+  harvests: [],
+  notes: [],
+  gourmetGrid: Array(30).fill(null)
+});
+
